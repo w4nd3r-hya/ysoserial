@@ -22,6 +22,15 @@ A proof-of-concept tool for generating payloads that exploit unsafe Java object 
 
 后续有空继续完善
 
+自定义代码功能(参考https://github.com/SummerSec/ysoserial)
+| 序号 | 方式 | 描述 |
+| --- | --- | --- |
+| 1 | command | 与原版相同 |
+| 2 | “code:代码内容” | 代码量比较少时采用 |
+| 3 | “codebase64:代码内容base64编码” | 防止代码中存在但引号，双引号，&等字符与控制台命令冲突。 |
+| 4 | “codefile:代码文件路径” | 代码量比较多时采用 |
+| 5 | “classfile:class路径“ | 利用已生成好的 class 直接获取其字节码 |
+
 ## Usage
 
 ```shell
